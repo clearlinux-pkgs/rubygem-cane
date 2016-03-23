@@ -1,0 +1,4 @@
+# File auto-generated with 'Watchfile generator'
+# 2016-03-23 21:32:46.063284
+# {'development', '~>2.6', '>=2.1.0'}
+watchurl=https://rubygems.org/gems/cane/versions/([0-2]\.[0-9]{1,2}(?:\.[0-9]{1,2})*)

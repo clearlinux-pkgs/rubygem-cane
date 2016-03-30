@@ -4,7 +4,7 @@
 #
 Name     : rubygem-cane
 Version  : 2.6.2
-Release  : 5
+Release  : 6
 URL      : https://rubygems.org/downloads/cane-2.6.2.gem
 Source0  : https://rubygems.org/downloads/cane-2.6.2.gem
 Summary  : No detailed summary available
@@ -12,19 +12,11 @@ Group    : Development/Tools
 License  : Apache-2.0
 Requires: rubygem-cane-bin
 BuildRequires : ruby
-BuildRequires : rubygem-diff-lcs
-BuildRequires : rubygem-docile
 BuildRequires : rubygem-parallel
 BuildRequires : rubygem-rake
 BuildRequires : rubygem-rdoc
-BuildRequires : rubygem-rspec
-BuildRequires : rubygem-rspec-core
-BuildRequires : rubygem-rspec-expectations
 BuildRequires : rubygem-rspec-fire
-BuildRequires : rubygem-rspec-mocks
-BuildRequires : rubygem-rspec-support
 BuildRequires : rubygem-simplecov
-BuildRequires : rubygem-simplecov-html
 
 %description
 # Cane
@@ -66,228 +58,47 @@ cp -pa .%{_bindir}/* \
 %{buildroot}%{_bindir}/
 fi
 
-%check
-export http_proxy=http://127.0.0.1:9/
-export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
-pushd %{buildroot}%{gem_dir}/gems/cane-2.6.2
-rspec -I.:lib spec/
-popd
-
 
 %files
 %defattr(-,root,root,-)
-/usr/lib64/ruby/gems/2.2.0/cache/cane-2.6.2.gem
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/InvalidAst/cdesc-InvalidAst.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/InvalidAst/violations-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/RubyAst/anon_method_add-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/RubyAst/assignment_nodes-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/RubyAst/branch_nodes-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/RubyAst/calculate_abc-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/RubyAst/cdesc-RubyAst.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/RubyAst/condition_nodes-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/RubyAst/container_label-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/RubyAst/container_nodes-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/RubyAst/count_nodes-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/RubyAst/excluded%3f-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/RubyAst/label_for-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/RubyAst/method_description-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/RubyAst/method_nodes-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/RubyAst/new-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/RubyAst/process_ast-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/RubyAst/violations-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/cdesc-AbcCheck.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/exclusions-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/file_names-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/find_violations-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/key-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/max_allowed_complexity-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/name-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/options-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/order-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/violations-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/AbcCheck/worker-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/OptionsHandled/cdesc-OptionsHandled.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/add_banner-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/add_cane_options-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/add_check_options-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/add_checks_shortcut-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/add_help-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/add_option-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/add_user_defined_checks-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/add_version-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/cdesc-Parser.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/get_default_options-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/new-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/options-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/parse-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/parse-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/parser-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/read_options_from_file-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/Parser/stdout-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/cdesc-CLI.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/default_options-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/default_options-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/defaults-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/defaults-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/run-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/CLI/run-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/cdesc-DocCheck.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/class_definition%3f-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/class_definition-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/class_definitions_in-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/comment%3f-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/excluded%3f-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/exclusions-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/extract_class_name-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/file_names-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/find_violations-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/key-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/method_definition%3f-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/missing_file_violations-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/name-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/options-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/single_line_class_definition%3f-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/violations-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/DocCheck/worker-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/EncodingAwareIterator/cdesc-EncodingAwareIterator.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/EncodingAwareIterator/each-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/EncodingAwareIterator/lines-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/EncodingAwareIterator/new-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/File/case_insensitive_glob-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/File/cdesc-File.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/File/contents-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/File/exists%3f-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/File/iterator-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/File/open-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/JsonFormatter/cdesc-JsonFormatter.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/JsonFormatter/new-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/JsonFormatter/to_s-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/RakeTask/add_threshold-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/RakeTask/canefile%3d-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/RakeTask/cdesc-RakeTask.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/RakeTask/name-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/RakeTask/new-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/RakeTask/options-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/RakeTask/use-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/Runner/cdesc-Runner.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/Runner/checks-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/Runner/formatter-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/Runner/new-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/Runner/opts-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/Runner/outputter-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/Runner/run-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/Runner/violations-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/SimpleTaskRunner/cdesc-SimpleTaskRunner.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/SimpleTaskRunner/map-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/StyleCheck/cdesc-StyleCheck.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/StyleCheck/excluded%3f-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/StyleCheck/exclusions-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/StyleCheck/file_list-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/StyleCheck/key-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/StyleCheck/map_lines-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/StyleCheck/measure-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/StyleCheck/name-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/StyleCheck/options-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/StyleCheck/violations-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/StyleCheck/violations_for_line-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/StyleCheck/worker-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ThresholdCheck/UnavailableValue/%3e%3d-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ThresholdCheck/UnavailableValue/cdesc-UnavailableValue.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ThresholdCheck/UnavailableValue/real%3f-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ThresholdCheck/UnavailableValue/to_s-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ThresholdCheck/cdesc-ThresholdCheck.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ThresholdCheck/key-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ThresholdCheck/normalized_limit-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ThresholdCheck/options-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ThresholdCheck/thresholds-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ThresholdCheck/value_from_file-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ThresholdCheck/violations-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ViolationFormatter/cdesc-ViolationFormatter.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ViolationFormatter/colorize-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ViolationFormatter/column_widths-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ViolationFormatter/format_group_header-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ViolationFormatter/format_violation-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ViolationFormatter/format_violations-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ViolationFormatter/new-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ViolationFormatter/options-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ViolationFormatter/to_s-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ViolationFormatter/totals-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/ViolationFormatter/violations-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/cdesc-Cane.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/default_checks-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/default_checks-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/run-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/run-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/task_runner-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/Cane/task_runner-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/cane-2.6.2/ri/cache.ri
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/HISTORY.md
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/LICENSE
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/README.md
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/bin/cane
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/cane.gemspec
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/.last_run.json
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/.resultset.json
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/.resultset.json.lock
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/application.css
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/application.js
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/colorbox/border.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/colorbox/controls.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/colorbox/loading.gif
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/colorbox/loading_background.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/favicon_green.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/favicon_red.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/favicon_yellow.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/loading.gif
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/magnify.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-bg_glass_75_dadada_1x400.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-icons_222222_256x240.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-icons_2e83ff_256x240.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-icons_454545_256x240.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-icons_888888_256x240.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-icons_cd0a0a_256x240.png
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/covered_percent
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/coverage/index.html
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/lib/cane.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/lib/cane/abc_check.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/lib/cane/cli.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/lib/cane/cli/options.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/lib/cane/cli/parser.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/lib/cane/default_checks.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/lib/cane/doc_check.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/lib/cane/encoding_aware_iterator.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/lib/cane/file.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/lib/cane/json_formatter.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/lib/cane/rake_task.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/lib/cane/runner.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/lib/cane/style_check.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/lib/cane/task_runner.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/lib/cane/threshold_check.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/lib/cane/version.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/lib/cane/violation_formatter.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/spec/abc_check_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/spec/cane_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/spec/cli_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/spec/doc_check_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/spec/encoding_aware_iterator_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/spec/file_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/spec/json_formatter_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/spec/parser_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/spec/rake_task_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/spec/runner_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/spec/spec_helper.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/spec/style_check_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/spec/threshold_check_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/cane-2.6.2/spec/violation_formatter_spec.rb
-/usr/lib64/ruby/gems/2.2.0/specifications/cane-2.6.2.gemspec
+/usr/lib64/ruby/gems/2.3.0/cache/cane-2.6.2.gem
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/HISTORY.md
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/LICENSE
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/README.md
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/bin/cane
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/cane.gemspec
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/abc_check.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/cli.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/cli/options.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/cli/parser.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/default_checks.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/doc_check.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/encoding_aware_iterator.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/file.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/json_formatter.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/rake_task.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/runner.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/style_check.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/task_runner.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/threshold_check.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/version.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/violation_formatter.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/spec/abc_check_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/spec/cane_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/spec/cli_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/spec/doc_check_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/spec/encoding_aware_iterator_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/spec/file_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/spec/json_formatter_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/spec/parser_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/spec/rake_task_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/spec/runner_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/spec/spec_helper.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/spec/style_check_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/spec/threshold_check_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/spec/violation_formatter_spec.rb
+/usr/lib64/ruby/gems/2.3.0/specifications/cane-2.6.2.gemspec
 
 %files bin
 %defattr(-,root,root,-)

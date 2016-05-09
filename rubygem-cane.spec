@@ -4,7 +4,7 @@
 #
 Name     : rubygem-cane
 Version  : 2.6.2
-Release  : 8
+Release  : 9
 URL      : https://rubygems.org/downloads/cane-2.6.2.gem
 Source0  : https://rubygems.org/downloads/cane-2.6.2.gem
 Summary  : No detailed summary available
@@ -12,11 +12,20 @@ Group    : Development/Tools
 License  : Apache-2.0
 Requires: rubygem-cane-bin
 BuildRequires : ruby
+BuildRequires : rubygem-devise
+BuildRequires : rubygem-diff-lcs
+BuildRequires : rubygem-docile
 BuildRequires : rubygem-parallel
 BuildRequires : rubygem-rake
 BuildRequires : rubygem-rdoc
+BuildRequires : rubygem-rspec
+BuildRequires : rubygem-rspec-core
+BuildRequires : rubygem-rspec-expectations
 BuildRequires : rubygem-rspec-fire
+BuildRequires : rubygem-rspec-mocks
+BuildRequires : rubygem-rspec-support
 BuildRequires : rubygem-simplecov
+BuildRequires : rubygem-simplecov-html
 
 %description
 # Cane
@@ -58,6 +67,14 @@ cp -pa .%{_bindir}/* \
 %{buildroot}%{_bindir}/
 fi
 
+%check
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost
+pushd %{buildroot}%{gem_dir}/gems/cane-2.6.2
+rspec -I.:lib spec/
+popd
+
 
 %files
 %defattr(-,root,root,-)
@@ -67,6 +84,35 @@ fi
 /usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/README.md
 /usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/bin/cane
 /usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/cane.gemspec
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/.last_run.json
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/.resultset.json
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/.resultset.json.lock
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/application.css
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/application.js
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/colorbox/border.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/colorbox/controls.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/colorbox/loading.gif
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/colorbox/loading_background.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/favicon_green.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/favicon_red.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/favicon_yellow.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/loading.gif
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/magnify.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-bg_glass_75_dadada_1x400.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-icons_222222_256x240.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-icons_2e83ff_256x240.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-icons_454545_256x240.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-icons_888888_256x240.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/assets/0.10.0/smoothness/images/ui-icons_cd0a0a_256x240.png
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/covered_percent
+/usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/coverage/index.html
 /usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane.rb
 /usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/abc_check.rb
 /usr/lib64/ruby/gems/2.3.0/gems/cane-2.6.2/lib/cane/cli.rb
